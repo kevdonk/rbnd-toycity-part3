@@ -27,4 +27,8 @@ class Customer
       raise OutOfStockError, "'#{product.title}' is out of stock."
     end
   end
+  def return(product)
+    Transaction.new(self,product,true)
+  end
+
 end

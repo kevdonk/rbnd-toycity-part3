@@ -1,0 +1,20 @@
+How long did you spend working on this project?
+
+  I spent roughly 4 hours working on this project.
+
+What was the most rewarding challenge you conquered?
+
+  The most rewarding challenge I conquered was, oddly enough, figuring out
+  how to decrement the stock when a transaction occured.
+
+What two additional features did you build? Why?
+  1) A way for customers to return items, because it was suggested, and seems
+  like a realistic feature.
+
+  2) A way to get the total value of all transactions, because Toy City is all
+  about raking in that dough.
+
+Where do you still have room to grow?
+  I am still not comfortable with Ruby. I think just coding more and more with
+  it will help me become more familiar with the syntax and nuances of the
+  language.

@@ -64,3 +64,13 @@ puts transaction2.product == nanoblock # Should return true
 
 walter.purchase(firehouse)
 #Should return OutOfStockError: 'LEGO Firehouse Headquarter' is out of stock.
+
+# EXTRA FEATURES
+
+puts Transaction.total_sales
+#Should return 99.98
+puts nanoblock.stock #should return 10
+puts walter.return(nanoblock)
+puts Transaction.all.count #should return 3
+puts nanoblock.stock #should return 11
+puts Transaction.total_sales #should return 49.99

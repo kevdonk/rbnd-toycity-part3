@@ -33,4 +33,7 @@ class Product
   def decrement_stock
     @stock -= 1
   end
+  def increment_stock
+    @stock += 1
+  end
 end
