@@ -24,10 +24,13 @@ class Product
     if !@@products.any?{|product| product.title == @title}
       @@products << self
     else
-      #raise DuplicateProductError, "'#{@title}' already exists."
+      raise DuplicateProductError, "'#{@title}' already exists."
     end
   end
   def in_stock?
     @stock > 0
+  end
+  def decrement_stock
+    @stock -= 1
   end
 end
