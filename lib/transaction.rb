@@ -1,4 +1,5 @@
 class Transaction
+  attr_reader :id, :customer, :product
   @@id = 1
   @@transactions = []
   @@total_sales = 0.00
@@ -7,13 +8,7 @@ class Transaction
     @@id += 1
     @customer = customer
     @product = product
-    if is_return
-      product.increment_stock
-      @@total_sales -= product.price
-    else
-      product.decrement_stock
-      @@total_sales += product.price
-    end
+    @is_return = is_return
     add_to_transactions
   end
   def self.all
@@ -28,15 +23,17 @@ class Transaction
     @@total_sales
   end
   def add_to_transactions
-    @@transactions << self
-  end
-  def id
-    @id
-  end
-  def customer
-    @customer
-  end
-  def product
-    @product
+    if @product.in_stock?
+      if @is_return
+        product.increment_stock
+        @@total_sales -= product.price
+      else
+        product.decrement_stock
+        @@total_sales += product.price
+      end
+      @@transactions << self
+    else
+      raise OutOfStockError, "'#{product.title}' is out of stock."
+    end
   end
 end

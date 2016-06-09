@@ -11,14 +11,10 @@ class Product
     @@products
   end
   def self.find_by_title(title)
-    @@products.find do |product|
-      title == product.title
-    end
+    @@products.find{|product| title == product.title}
   end
   def self.in_stock
-    @@products.select do |product|
-      product.in_stock?
-    end
+    @@products.select{|product| product.in_stock?}
   end
   def add_to_products
     if !@@products.any?{|product| product.title == @title}
